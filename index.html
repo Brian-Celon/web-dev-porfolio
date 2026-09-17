@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Celon | Portfolio</title>
+    <!-- Dark Mode Init Script to prevent FOUC -->
+    <script>
+        const theme_preference = localStorage.getItem('theme_preference');
+        if (theme_preference === 'dark_mode' || (!theme_preference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark_mode');
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for a clean, modern sans-serif typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="main_header">
+        <nav class="main_navigation floating_navigation">
+            <a href="#home_section" class="logo_link" aria-label="Go to home">
+                Brian Celon
+            </a>
+            
+            <ul class="nav_list">
+                <li class="nav_item"><a href="#home_section" class="nav_link">home</a></li>
+                <li class="nav_item"><a href="#about_section" class="nav_link">about</a></li>
+                <li class="nav_item"><a href="#skills_section" class="nav_link">skills</a></li>
+                <li class="nav_item"><a href="#projects_section" class="nav_link">projects</a></li>
+                <li class="nav_item"><a href="#experience_section" class="nav_link">experience</a></li>
+                <li class="nav_item"><a href="#contact_section" class="nav_link">contact</a></li>
+            </ul>
+
+            <div class="nav_actions">
+                <button class="theme_toggle" id="theme_toggle" aria-label="toggle theme">
+                    <span class="theme_icon_light" aria-hidden="true">☀</span>
+                    <span class="theme_icon_dark" aria-hidden="true">☾</span>
+                </button>
+                <button class="mobile_menu_button" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger_line"></span>
+                    <span class="hamburger_line"></span>
+                    <span class="hamburger_line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main_content">
+        <!-- Home / Hero Section -->
+        <section id="home_section" class="page_section hero_section">
+            <div class="section_container fade_in_element hero_container">
+                <div class="hero_content">
+                    <p class="hero_greeting">Hello, I'm</p>
+                    <h1 class="hero_title">Brian Celon</h1>
+                    <h2 class="hero_subtitle">3rd Year Information Technology Student</h2>
+                    <p class="hero_school">Pambayang Dalubhasaan ng Marilao</p>
+                    <p class="hero_description">
+                        I'm an Information Technology student interested in building websites, applications, and technology-driven solutions.
+                    </p>
+                    <div class="hero_buttons">
+                        <a href="#projects_section" class="primary_button">View My Projects</a>
+                        <a href="#contact_section" class="secondary_button">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero_image_wrapper">
+                    <div class="profile_image_container">
+                        <img src="assets/me.jpg" alt="Brian Celon Profile Picture" class="profile_image" id="profile_image">
+                        <script>
+                            if (document.documentElement.classList.contains('dark_mode')) {
+                                document.getElementById('profile_image').src = 'assets/Dark.jpg';
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about_section" class="page_section about_section">
+            <div class="section_container fade_in_element">
+                <h2 class="section_title">About</h2>
+                <div class="content_card">
+                    <p class="about_text">
+                        Brian Celon is a 3rd year Information Technology student at Pambayang Dalubhasaan ng Marilao.
+                    </p>
+                    <p class="about_placeholder_text">
+                        [ADD YOUR PERSONAL INTRODUCTION HERE]
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills_section" class="page_section skills_section">
+            <div class="section_container fade_in_element">
+                <h2 class="section_title">Skills</h2>
+                <div class="skills_grid">
+                    <div class="skill_card">
+                        <h3 class="skill_name">HTML</h3>
+                    </div>
+                    <div class="skill_card">
+                        <h3 class="skill_name">CSS</h3>
+                    </div>
+                    <div class="skill_card">
+                        <h3 class="skill_name">JavaScript</h3>
+                    </div>
+                    <div class="skill_card">
+                        <h3 class="skill_name">SQL</h3>
+                    </div>
+                    <div class="skill_card">
+                        <h3 class="skill_name">Python</h3>
+                    </div>
+                    <div class="skill_card">
+                        <h3 class="skill_name">C</h3>
+                    </div>
+                    <div class="skill_card">
+                        <h3 class="skill_name">C#</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects_section" class="page_section projects_section">
+            <div class="section_container fade_in_element">
+                <h2 class="section_title">Projects</h2>
+                <div class="projects_grid">
+                    <!-- Project 01 -->
+                    <div class="project_card">
+                        <div class="project_image_placeholder">
+                            <span>[PROJECT IMAGE]</span>
+                        </div>
+                        <div class="project_info">
+                            <h3 class="project_name">[PROJECT NAME]</h3>
+                            <p class="project_description">[PROJECT DESCRIPTION]</p>
+                            <p class="project_technologies">[TECHNOLOGIES USED]</p>
+                            <div class="project_links">
+                                <a href="#" class="project_link">[VIEW PROJECT]</a>
+                                <a href="#" class="project_link">[GITHUB LINK]</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 02 -->
+                    <div class="project_card">
+                        <div class="project_image_placeholder">
+                            <span>[PROJECT IMAGE]</span>
+                        </div>
+                        <div class="project_info">
+                            <h3 class="project_name">[PROJECT NAME]</h3>
+                            <p class="project_description">[PROJECT DESCRIPTION]</p>
+                            <p class="project_technologies">[TECHNOLOGIES USED]</p>
+                            <div class="project_links">
+                                <a href="#" class="project_link">[VIEW PROJECT]</a>
+                                <a href="#" class="project_link">[GITHUB LINK]</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 03 -->
+                    <div class="project_card">
+                        <div class="project_image_placeholder">
+                            <span>[PROJECT IMAGE]</span>
+                        </div>
+                        <div class="project_info">
+                            <h3 class="project_name">[PROJECT NAME]</h3>
+                            <p class="project_description">[PROJECT DESCRIPTION]</p>
+                            <p class="project_technologies">[TECHNOLOGIES USED]</p>
+                            <div class="project_links">
+                                <a href="#" class="project_link">[VIEW PROJECT]</a>
+                                <a href="#" class="project_link">[GITHUB LINK]</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 04 -->
+                    <div class="project_card">
+                        <div class="project_image_placeholder">
+                            <span>[PROJECT IMAGE]</span>
+                        </div>
+                        <div class="project_info">
+                            <h3 class="project_name">[PROJECT NAME]</h3>
+                            <p class="project_description">[PROJECT DESCRIPTION]</p>
+                            <p class="project_technologies">[TECHNOLOGIES USED]</p>
+                            <div class="project_links">
+                                <a href="#" class="project_link">[VIEW PROJECT]</a>
+                                <a href="#" class="project_link">[GITHUB LINK]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience_section" class="page_section experience_section">
+            <div class="section_container fade_in_element">
+                <h2 class="section_title">Experience</h2>
+                <div class="content_card experience_card">
+                    <h3 class="experience_role">3rd Year Information Technology Student</h3>
+                    <p class="experience_organization">Pambayang Dalubhasaan ng Marilao</p>
+                    <p class="experience_placeholder_text">
+                        [ADD YOUR EDUCATIONAL EXPERIENCE OR RELEVANT EXPERIENCE HERE]
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact_section" class="page_section contact_section">
+            <div class="section_container fade_in_element">
+                <h2 class="section_title">Contact</h2>
+                <div class="contact_cards_container">
+                    <a href="mailto:brianhoward.celon@gmail.com" class="contact_card">
+                        <span class="contact_label">Email</span>
+                        <span class="contact_value">brianhoward.celon@gmail.com</span>
+                    </a>
+                    <a href="#" class="contact_card">
+                        <span class="contact_label">GitHub</span>
+                        <span class="contact_value">[YOUR GITHUB LINK]</span>
+                    </a>
+                    <a href="#" class="contact_card">
+                        <span class="contact_label">Facebook</span>
+                        <span class="contact_value">Howard Celon</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main_footer">
+        <div class="footer_container">
+            <p>© 2026 Brian Celon</p>
+            <p class="footer_subtext">Built with HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
