@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body style="margin: 0;">
+
+    <Header style="background-color: aqua; padding: 10px; text-align: center;">
+    <h1>STUDENT REGISTRATION FORM</h1>
+    <p>REGISTER NOW</p>
+    </Header>
+
+    <Nav style="background-color: tomato; display: flex; justify-content: center; gap: 100px; padding: 10px; ">
+        <a href="index.html">Home</a>
+        <a href="registration.html" target="_blank">Registration Form</a>
+        <a href="grade.html" target="_blank">Grade Table</a>
+        <a href="profile.html" target="_blank">My Profile</a>
+    </Nav>
+
+    <Main>
+        <Section>
+            <form>
+                <br><label for="name">Student Name</label><br>
+                
+                <input type="text" id="name"><br><br>
+                
+
+                <label for="studnum">Student Number</label><br>
+                <input type="text" id="studnum"><br><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email"><br><br>
+
+                <label>Gender</label><br>
+                <input type="radio" id="male">
+                <label for="male">Male</label>
+                
+                <input type="radio" id="female">
+                <label for="female">Female</label><br><br>
+
+                <label>Course</label>
+                <select>
+                <option value="BSCS">BSCS</option>
+                <option value="BSIT">BSIT</option>
+                <option value="BSTM">BSTM</option>
+                </select><br><br>
+
+                <label>Skills</label><br>
+                <input type="checkbox" id="html">
+                <label for="html">HTML</label>
+
+                <input type="checkbox" id="css">
+                <label for="css">CSS</label>
+
+                <input type="checkbox" id="javascript">
+                <label for="javascript">JavaScript</label><br><br>
+                
+                <label>Upload Picture</label><br>
+                <input type="file" id="file">
+                <label for="file"></label><br><br>
+
+                <label for="address">Address</label><br>
+                <textarea name="address" id="address"></textarea><br><br>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button><br><br>
+
+            </form>
+        </Section>
+    </Main>
+
+    <Footer style="background-color: orange; padding: 10px; text-align: center;">
+        <p>Copyright © 2026</p>   
+    </Footer>
+</body>
+</html>

@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.hero-page {
+    display: flex;
+    background-color: white;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+html {
+    scroll-behavior: smooth;
+    transition: 10;
+}
+
+
+
+.navbar {
+    flex: 3;
+    padding: 22px;
+}
+
+.logo {
+    flex: 2;
+    margin-left: 300px;
+    align-items: center;
+    display: flex;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 100px;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.navbar a {
+    text-decoration: none;
+    
+}
+
+.logo img {
+    max-width: 150px;
+    min-width: 150px;
+    flex: 2;
+}
+
+
+
+#home {
+    display: flex;
+    background-color: #F8F9FA;
+}
+
+.hero-info {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    line-height: 50px;
+}
+
+.app-picture {
+    flex: 2;
+}
+
+.about-features {
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    
+}
+
+.features {
+    display: flex;
+    gap: 50px;
+    box-shadow: 50px;
+}
+
+.card1 {
+    background-color: #DEE2E6 ;
+    border-radius: 20px;
+    padding: 10px;
+    text-wrap: wrap;
+}
+
+.card2 {
+    background-color: #DEE2E6 ;
+    border-radius: 20px;
+    padding: 10px;
+    text-wrap: wrap;
+}
+ 
+.card3 {
+    background-color: #DEE2E6 ;
+    border-radius: 20px;
+    padding: 10px;
+    text-wrap: wrap;
+}
+
+footer {
+    text-align: center;
+}
+
+#programs {
+    background-color: #E9ECEF;
+    padding: 200px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 50px;
+}
+
+#about {
+    background-color: #F8F9FA;
+    padding: 200px;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: none;
+    
+}
+
+#programs {
+    display: flex;
+    
+}
+
+.program-list {
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.program1 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 15px;
+    text-wrap: wrap;
+    width: 250px;
+}
+
+.program2 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 15px;
+    text-wrap: wrap;
+    width: 250px;
+}
+
+.program3 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 15px;
+    text-wrap: wrap;
+    width: 250px;
+}
+
+.program4 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 15px;
+    text-wrap: wrap;
+    width: 250px;
+}
+
+.program5 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 15px;
+    text-wrap: wrap;
+    width: 250px;
+}
+
+.program6 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 15px;
+    text-wrap: wrap;
+    width: 250px;
+}
+
+
+
+.program-info {
+    text-wrap: wrap;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.learn-more {
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+
+}
+
+.learn-more a{
+    text-decoration: none;
+    color: black;
+}
+
+.learn-more:hover{
+    background-color: lightblue;
+}
+
+
+
+.stat1 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 10px;
+    text-wrap: wrap;
+    text-align: center;
+    width: 250px;
+}
+
+.stat2 {
+    background-color: white ;
+    border-radius: 20px;
+    padding: 10px;
+    text-wrap: wrap;
+    text-align: center;
+    width: 250px;
+}
+
+.stat1 h3:first-child{
+    color: blue;
+}
+
+.stat2 h3:first-child{
+    color: blue;
+}
+
+
+.stat1 p:first-child {
+    color: black;
+}
+
+.stat2 p:first-child {
+    color: black;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.stat1:hover {
+    transform: translateY(-20px);
+}
+
+.stat2:hover {
+    transform: translateY(-20px);
+}

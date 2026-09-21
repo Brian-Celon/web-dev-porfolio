@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    
+}
+
+
+.title{
+    text-align: center;
+    background-color: cyan;
+    padding: 50px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.link a{
+    text-decoration: none;
+    color: black;
+}
+
+.link a:hover{
+    color: white;
+}
+
+.link li{
+    list-style: none;
+}
+
+nav{
+    background-color: crimson;
+    padding: 10px;
+}
+
+.welcome {
+    border: 2px none;
+    background-color: yellow;
+    border-radius: 20px;
+    height: 100px;
+    width: 1500px;
+    padding: 10px;
+    margin: 10px;
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content {
+    flex: 1;
+    border: 2px none;
+    background-color: green;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+footer{
+    background-color: gold;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card {
+    border: 2px solid red;
+    background-color: white;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    padding: 20px;
+    height: 600px;
+    width: 500px;
+
+}
+
+.input {
+    width: 500px;
+}
+
+.registration {
+    background-color: yellow;
+    padding: 50px;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+}
+
+table {
+    text-align: center;
+    margin: auto;
+    
+}
+
+.grades {
+    background-color: white;
+}
+
+.button {
+    background-color: lightblue;
+    width: 500px;
+    color: white;
+}
+
+.circle{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+
+}
+
+
+
+.help  {
+    display: flex;
+}
+
+.nah{
+    flex: 1;
+    margin-right: 5px;
+}
+.personal {
+    flex: 4;
+}
+
+table {
+    width: 650px;
+    border-collapse: collapse;
+    
+}
+
+th {
+    background-color: pink;
+}
+
+td {
+    background-color: red;
+}
+
+.cards {
+    border: 1px solid red;
+    background-color: white;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    padding: 20px;
+    height: 280px;
+    width: 500px;
+}
+
+button:hover {
+    color: black;
+}
