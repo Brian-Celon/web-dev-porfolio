@@ -826,6 +826,84 @@
                     color var(--transition_speed) ease;
         text-align: center;
         text-decoration: none;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .copy_email_card:focus-visible {
+        outline: 2px solid var(--color_underline);
+        outline-offset: 4px;
+    }
+
+    .copy_hint {
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--color_text_muted);
+        background-color: var(--color_bg);
+        border: 1px solid var(--color_border);
+        padding: 4px 12px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 0.35rem;
+        transition: all 0.25s ease;
+    }
+
+    .contact_card:hover .copy_hint {
+        border-color: var(--color_border_hover);
+        color: var(--color_text_main);
+        background-color: var(--color_surface);
+        transform: translateY(-1px);
+    }
+
+    .copy_hint.copied {
+        background-color: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+        border-color: #10b981;
+    }
+
+    /* Toast Notification */
+    .toast_notification {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(30px);
+        opacity: 0;
+        pointer-events: none;
+        background-color: var(--color_surface);
+        color: var(--color_text_main);
+        border: 1px solid var(--color_border);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+        padding: 10px 22px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        z-index: 100000;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.35s ease;
+    }
+
+    .toast_notification.toast_visible {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .toast_icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: #10b981;
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: bold;
     }
 
     .contact_card:hover {

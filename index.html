@@ -323,13 +323,16 @@
             <div class="section_container fade_in_element">
                 <h2 class="section_title">Contact</h2>
                 <div class="contact_cards_container">
-                    <a href="mailto:brianhoward.celon@gmail.com" class="contact_card">
+                    <div class="contact_card copy_email_card" id="email_copy_card" role="button" tabindex="0" aria-label="Copy email address to clipboard">
                         <span class="contact_label">Email</span>
                         <span class="contact_value">brianhoward.celon@gmail.com</span>
-                    </a>
-                    <a href="#" class="contact_card">
+                        <span class="copy_hint" id="copy_hint">
+                            <span class="copy_icon">📋</span> Click to copy
+                        </span>
+                    </div>
+                    <a href="https://github.com/Brian-Celon" target="_blank" rel="noopener noreferrer" class="contact_card">
                         <span class="contact_label">GitHub</span>
-                        <span class="contact_value">https://github.com/Brian-Celon</span>
+                        <span class="contact_value">github.com/Brian-Celon</span>
                     </a>
                     <a href="#" class="contact_card">
                         <span class="contact_label">Facebook</span>
@@ -381,6 +384,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast_notification" class="toast_notification" role="status" aria-live="polite">
+        <span class="toast_icon">✓</span>
+        <span class="toast_message" id="toast_message">Copied to clipboard!</span>
     </div>
 
     <script src="script.js"></script>

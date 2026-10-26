@@ -546,3 +546,75 @@ device_buttons.forEach(function (btn) {
 
 });
 
+
+
+
+// One-Click Copy Email Logic with Toast Notification
+const email_copy_card = document.getElementById('email_copy_card');
+const toast_notification = document.getElementById('toast_notification');
+const toast_message = document.getElementById('toast_message');
+const copy_hint = document.getElementById('copy_hint');
+
+let toast_timeout;
+
+function show_toast(message) {
+    if (!toast_notification) return;
+    if (toast_message) toast_message.textContent = message;
+    
+    toast_notification.classList.add('toast_visible');
+    
+    clearTimeout(toast_timeout);
+    toast_timeout = setTimeout(function () {
+        toast_notification.classList.remove('toast_visible');
+    }, 2800);
+}
+
+function fallback_copy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+        document.execCommand('copy');
+    } catch (err) {}
+    document.body.removeChild(textarea);
+}
+
+function copy_email_to_clipboard() {
+    const email = 'brianhoward.celon@gmail.com';
+
+    function onSuccess() {
+        show_toast('Copied ' + email + ' to clipboard!');
+        if (copy_hint) {
+            copy_hint.innerHTML = '<span class="copy_icon">✓</span> Copied!';
+            copy_hint.classList.add('copied');
+            setTimeout(function () {
+                copy_hint.innerHTML = '<span class="copy_icon">📋</span> Click to copy';
+                copy_hint.classList.remove('copied');
+            }, 2500);
+        }
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(onSuccess).catch(function () {
+            fallback_copy(email);
+            onSuccess();
+        });
+    } else {
+        fallback_copy(email);
+        onSuccess();
+    }
+}
+
+if (email_copy_card) {
+    email_copy_card.addEventListener('click', copy_email_to_clipboard);
+    email_copy_card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            copy_email_to_clipboard();
+        }
+    });
+}
+
