@@ -473,19 +473,29 @@
         color: var(--color_text_light);
         font-size: 0.875rem;
         border-bottom: 1px solid var(--color_border);
+        overflow: hidden;
+    }
+
+    .project_image_placeholder span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 12px;
+        box-sizing: border-box;
     }
 
     .project_image_placeholder img {
         max-width: 100%;
-        max-height: 200px;
+        max-height: 100%;
         object-fit: contain;
+        display: block;
+        transition: transform var(--transition_speed) ease;
     }
 
-    .project_placeholder_label {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--color_text_muted);
-        letter-spacing: 0.02em;
+    .project_card:hover .project_image_placeholder img {
+        transform: scale(1.04);
     }
 
     .project_info {
