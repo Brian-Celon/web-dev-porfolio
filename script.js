@@ -19,10 +19,19 @@ if (mobile_menu_button) {
 // Close mobile menu when a navigation link is clicked
 nav_links.forEach(function(link) {
     link.addEventListener('click', function() {
-        if (nav_list.classList.contains('mobile_menu_active')) {
+        if (nav_list && nav_list.classList.contains('mobile_menu_active')) {
             toggle_mobile_menu();
         }
     });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    if (nav_list && nav_list.classList.contains('mobile_menu_active')) {
+        if (!nav_list.contains(event.target) && !mobile_menu_button.contains(event.target)) {
+            toggle_mobile_menu();
+        }
+    }
 });
 
 
