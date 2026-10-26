@@ -323,21 +323,28 @@
             <div class="section_container fade_in_element">
                 <h2 class="section_title">Contact</h2>
                 <div class="contact_cards_container">
-                    <div class="contact_card copy_email_card" id="email_copy_card" role="button" tabindex="0" aria-label="Copy email address to clipboard">
+                    <div class="contact_card copy_contact_card" role="button" tabindex="0" data-copy="brianhoward.celon@gmail.com" data-type="Email" aria-label="Copy email address to clipboard">
                         <span class="contact_label">Email</span>
                         <span class="contact_value">brianhoward.celon@gmail.com</span>
-                        <span class="copy_hint" id="copy_hint">
+                        <span class="copy_hint">
                             <span class="copy_icon">📋</span> Click to copy
                         </span>
                     </div>
-                    <a href="https://github.com/Brian-Celon" target="_blank" rel="noopener noreferrer" class="contact_card">
+                    <div class="contact_card copy_contact_card" role="button" tabindex="0" data-copy="https://github.com/Brian-Celon" data-type="GitHub URL" aria-label="Copy GitHub link to clipboard">
+                        <a href="https://github.com/Brian-Celon" target="_blank" rel="noopener noreferrer" class="contact_card_visit" title="Open GitHub profile" aria-label="Open GitHub profile" onclick="event.stopPropagation();">↗</a>
                         <span class="contact_label">GitHub</span>
                         <span class="contact_value">github.com/Brian-Celon</span>
-                    </a>
-                    <a href="#" class="contact_card">
+                        <span class="copy_hint">
+                            <span class="copy_icon">📋</span> Click to copy link
+                        </span>
+                    </div>
+                    <div class="contact_card copy_contact_card" role="button" tabindex="0" data-copy="Howard Celon" data-type="Facebook name" aria-label="Copy Facebook name to clipboard">
                         <span class="contact_label">Facebook</span>
                         <span class="contact_value">Howard Celon</span>
-                    </a>
+                        <span class="copy_hint">
+                            <span class="copy_icon">📋</span> Click to copy
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>

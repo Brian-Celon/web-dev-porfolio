@@ -830,9 +830,36 @@
         position: relative;
     }
 
+    .copy_contact_card:focus-visible,
     .copy_email_card:focus-visible {
         outline: 2px solid var(--color_underline);
         outline-offset: 4px;
+    }
+
+    .contact_card_visit {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color_text_muted);
+        border: 1px solid var(--color_border);
+        background-color: var(--color_bg);
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        z-index: 2;
+    }
+
+    .contact_card_visit:hover {
+        color: var(--color_text_main);
+        border-color: var(--color_border_hover);
+        background-color: var(--color_surface);
+        transform: translate(1px, -1px);
     }
 
     .copy_hint {

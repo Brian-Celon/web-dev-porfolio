@@ -546,23 +546,19 @@ device_buttons.forEach(function (btn) {
 
 });
 
-
-
-
-// One-Click Copy Email Logic with Toast Notification
-const email_copy_card = document.getElementById('email_copy_card');
+// One-Click Copy for Contact Cards (Email, GitHub, Facebook)
+const copy_contact_cards = document.querySelectorAll('.copy_contact_card');
 const toast_notification = document.getElementById('toast_notification');
 const toast_message = document.getElementById('toast_message');
-const copy_hint = document.getElementById('copy_hint');
 
 let toast_timeout;
 
 function show_toast(message) {
     if (!toast_notification) return;
     if (toast_message) toast_message.textContent = message;
-    
+
     toast_notification.classList.add('toast_visible');
-    
+
     clearTimeout(toast_timeout);
     toast_timeout = setTimeout(function () {
         toast_notification.classList.remove('toast_visible');
@@ -582,39 +578,48 @@ function fallback_copy(text) {
     document.body.removeChild(textarea);
 }
 
-function copy_email_to_clipboard() {
-    const email = 'brianhoward.celon@gmail.com';
+function copy_card_data(card) {
+    const text_to_copy = card.getAttribute('data-copy');
+    const type_label = card.getAttribute('data-type') || 'Contact info';
+    const card_hint = card.querySelector('.copy_hint');
+
+    if (!text_to_copy) return;
 
     function onSuccess() {
-        show_toast('Copied ' + email + ' to clipboard!');
-        if (copy_hint) {
-            copy_hint.innerHTML = '<span class="copy_icon">✓</span> Copied!';
-            copy_hint.classList.add('copied');
+        show_toast('✓ Copied ' + type_label + ' (' + text_to_copy + ') to clipboard!');
+        if (card_hint) {
+            const original_html = card_hint.innerHTML;
+            card_hint.innerHTML = '<span class="copy_icon">✓</span> Copied!';
+            card_hint.classList.add('copied');
             setTimeout(function () {
-                copy_hint.innerHTML = '<span class="copy_icon">📋</span> Click to copy';
-                copy_hint.classList.remove('copied');
+                card_hint.innerHTML = original_html;
+                card_hint.classList.remove('copied');
             }, 2500);
         }
     }
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(onSuccess).catch(function () {
-            fallback_copy(email);
+        navigator.clipboard.writeText(text_to_copy).then(onSuccess).catch(function () {
+            fallback_copy(text_to_copy);
             onSuccess();
         });
     } else {
-        fallback_copy(email);
+        fallback_copy(text_to_copy);
         onSuccess();
     }
 }
 
-if (email_copy_card) {
-    email_copy_card.addEventListener('click', copy_email_to_clipboard);
-    email_copy_card.addEventListener('keydown', function (e) {
+copy_contact_cards.forEach(function (card) {
+    card.addEventListener('click', function (e) {
+        // Ignore clicks on visit links (like external GitHub arrow)
+        if (e.target.closest('.contact_card_visit')) return;
+        copy_card_data(card);
+    });
+
+    card.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            copy_email_to_clipboard();
+            copy_card_data(card);
         }
     });
-}
-
+});
