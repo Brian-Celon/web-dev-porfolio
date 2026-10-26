@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+.nav-bar{
+    display: flex;
+    list-style: none;
+}
+
+.logo-container{
+    display: flex;
+
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    
+}
+

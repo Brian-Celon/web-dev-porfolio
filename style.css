@@ -475,6 +475,19 @@
         border-bottom: 1px solid var(--color_border);
     }
 
+    .project_image_placeholder img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+    }
+
+    .project_placeholder_label {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--color_text_muted);
+        letter-spacing: 0.02em;
+    }
+
     .project_info {
         padding: 2.5rem;
         flex-grow: 1;
