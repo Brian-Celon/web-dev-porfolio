@@ -67,13 +67,31 @@
                     </div>
                 </div>
                 <div class="hero_image_wrapper">
-                    <div class="profile_image_container">
-                        <img src="assets/me.jpg" alt="Brian Celon Profile Picture" class="profile_image" id="profile_image">
-                        <script>
-                            if (document.documentElement.classList.contains('dark_mode')) {
-                                document.getElementById('profile_image').src = 'assets/Dark.jpg';
-                            }
-                        </script>
+                    <div class="profile_image_container ascii_terminal_card">
+                        <div class="terminal_top_bar">
+                            <div class="terminal_dots">
+                                <span class="terminal_dot dot_red"></span>
+                                <span class="terminal_dot dot_yellow"></span>
+                                <span class="terminal_dot dot_green"></span>
+                            </div>
+                            <span class="terminal_filename">brian_celon.ascii</span>
+                            <button type="button" class="ascii_toggle_btn" id="ascii_toggle_btn" title="Toggle ASCII / Photo view" aria-label="Toggle between ASCII and Photo view">
+                                <span class="toggle_icon">📷</span> <span class="toggle_text">Photo</span>
+                            </button>
+                        </div>
+                        <div class="terminal_display_area">
+                            <pre class="ascii_canvas" id="ascii_art" aria-label="Brian Celon ASCII portrait"></pre>
+                            <img src="assets/me.jpg" alt="Brian Celon Profile Picture" class="profile_image photo_hidden" id="profile_image">
+                            <script>
+                                if (document.documentElement.classList.contains('dark_mode')) {
+                                    document.getElementById('profile_image').src = 'assets/Dark.jpg';
+                                }
+                            </script>
+                        </div>
+                        <div class="terminal_bottom_bar">
+                            <span class="terminal_badge">ASCII 2.0</span>
+                            <span class="terminal_status">● 52x26 RAW MONO</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,9 +149,26 @@
         <section id="projects_section" class="page_section projects_section">
             <div class="section_container fade_in_element">
                 <h2 class="section_title">Projects</h2>
+
+                <!-- Projects Filter Bar -->
+                <div class="projects_filter_bar" role="tablist" aria-label="Filter projects">
+                    <button type="button" class="filter_pill active" data-filter="all" role="tab" aria-selected="true">
+                        All <span class="pill_count">8</span>
+                    </button>
+                    <button type="button" class="filter_pill" data-filter="midterms" role="tab" aria-selected="false">
+                        Midterm <span class="pill_count">4</span>
+                    </button>
+                    <button type="button" class="filter_pill" data-filter="finals" role="tab" aria-selected="false">
+                        Finals <span class="pill_count">4</span>
+                    </button>
+                    <button type="button" class="filter_pill" data-filter="javascript" role="tab" aria-selected="false">
+                        JavaScript & DOM <span class="pill_count">4</span>
+                    </button>
+                </div>
+
                 <div class="projects_grid">
                     <!-- Midterm Project 01 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="midterms html-css">
                         <div class="project_image_placeholder">
                             <span><img src="Activity1/images/logo.png" alt="Picture of Midterm Activity 1"></span>
                         </div>
@@ -143,11 +178,14 @@
                             <p class="project_technologies">HTML, CSS</p>
                             <div class="project_links">
                                 <a href="Activity1/index.html" target="_self" class="project_link">Midterm Activity 1</a>
+                                <button type="button" class="project_preview_btn" data-url="Activity1/index.html" data-title="Midterm Activity 1" aria-label="Preview Midterm Activity 1">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
                     <!-- Midterm Project 02 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="midterms html-css">
                         <div class="project_image_placeholder">
                             <span><img src="Activity 2/images/me.png" alt="Picture of Midterm Activity 2"></span>
                         </div>
@@ -157,11 +195,14 @@
                             <p class="project_technologies">HTML, CSS</p>
                             <div class="project_links">
                                 <a href="Activity 2/index.html" target="_self" class="project_link">Midterm Activity 2</a>
+                                <button type="button" class="project_preview_btn" data-url="Activity 2/index.html" data-title="Midterm Activity 2" aria-label="Preview Midterm Activity 2">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
                     <!-- Midterm Project 03 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="midterms html-css">
                         <div class="project_image_placeholder">
                             <span><img src="Activity 3/Assets/egov-logo.png" alt="Picture of Midterm Activity 3"></span>
                         </div>
@@ -171,11 +212,14 @@
                             <p class="project_technologies">HTML, CSS</p>
                             <div class="project_links">
                                 <a href="Activity 3/index.html" target="_self" class="project_link">Midterm Activity 3</a>
+                                <button type="button" class="project_preview_btn" data-url="Activity 3/index.html" data-title="Midterm Activity 3" aria-label="Preview Midterm Activity 3">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
                     <!-- Midterm Project 04 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="midterms html-css">
                         <div class="project_image_placeholder">
                             <span><img src="assets/ACT4.png" alt="Picture of Midterm Activity 4"></span>
                         </div>
@@ -185,11 +229,14 @@
                             <p class="project_technologies">HTML, CSS</p>
                             <div class="project_links">
                                 <a href="Activity 4/index.html" target="_self" class="project_link">Midterm Activity 4</a>
+                                <button type="button" class="project_preview_btn" data-url="Activity 4/index.html" data-title="Midterm Activity 4" aria-label="Preview Midterm Activity 4">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
                     <!-- Finals Project 01 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="finals javascript">
                         <div class="project_image_placeholder">
                             <span><img src="assets/finals-act1.png" alt="Picture of Finals Activity 1"></span>
                         </div>
@@ -199,11 +246,14 @@
                             <p class="project_technologies">HTML, CSS, JavaScript</p>
                             <div class="project_links">
                                 <a href="Finals/Celon_FinalsAct1-20261026T113436Z-1-001/Celon_FinalsAct1/activity.html" target="_self" class="project_link">Finals Activity 1</a>
+                                <button type="button" class="project_preview_btn" data-url="Finals/Celon_FinalsAct1-20261026T113436Z-1-001/Celon_FinalsAct1/activity.html" data-title="Finals Activity 1" aria-label="Preview Finals Activity 1">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
                     <!-- Finals Project 02 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="finals javascript">
                         <div class="project_image_placeholder">
                             <span><img src="assets/finals-act2.png" alt="Picture of Finals Activity 2"></span>
                         </div>
@@ -213,11 +263,14 @@
                             <p class="project_technologies">HTML, CSS, JavaScript</p>
                             <div class="project_links">
                                 <a href="Finals/CELON_FINALS_ACT2-20261026T113453Z-1-001/CELON_FINALS_ACT2/index.html" target="_self" class="project_link">Finals Activity 2</a>
+                                <button type="button" class="project_preview_btn" data-url="Finals/CELON_FINALS_ACT2-20261026T113453Z-1-001/CELON_FINALS_ACT2/index.html" data-title="Finals Activity 2" aria-label="Preview Finals Activity 2">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
                     <!-- Finals Project 03 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="finals javascript">
                         <div class="project_image_placeholder">
                             <span><img src="assets/finals-act3.png" alt="Picture of Finals Activity 3"></span>
                         </div>
@@ -227,11 +280,14 @@
                             <p class="project_technologies">HTML, CSS, jQuery</p>
                             <div class="project_links">
                                 <a href="Finals/CelonFinalsAct3-20261026T113404Z-1-001/CelonFinalsAct3/index.html" target="_self" class="project_link">Finals Activity 3</a>
+                                <button type="button" class="project_preview_btn" data-url="Finals/CelonFinalsAct3-20261026T113404Z-1-001/CelonFinalsAct3/index.html" data-title="Finals Activity 3" aria-label="Preview Finals Activity 3">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
                     <!-- Finals Project 04 -->
-                    <div class="project_card">
+                    <div class="project_card" data-category="finals javascript">
                         <div class="project_image_placeholder">
                             <span><img src="assets/finals-act4.png" alt="Picture of Finals Activity 4"></span>
                         </div>
@@ -241,6 +297,9 @@
                             <p class="project_technologies">HTML, CSS, JavaScript, AJAX</p>
                             <div class="project_links">
                                 <a href="Finals/CelonFinalsAct4-20261026T113406Z-1-001/CelonFinalsAct4/index.html" target="_self" class="project_link">Finals Activity 4</a>
+                                <button type="button" class="project_preview_btn" data-url="Finals/CelonFinalsAct4-20261026T113406Z-1-001/CelonFinalsAct4/index.html" data-title="Finals Activity 4" aria-label="Preview Finals Activity 4">
+                                    <span class="preview_btn_icon">⚡</span> Preview
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -291,6 +350,41 @@
             <p class="footer_subtext">Built with HTML, CSS & JavaScript</p>
         </div>
     </footer>
+
+    <!-- Project Live Preview Modal (Interactive Sandbox) -->
+    <div id="preview_modal" class="preview_modal_overlay" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal_backdrop" id="modal_backdrop"></div>
+        <div class="modal_container">
+            <div class="modal_header">
+                <div class="modal_window_dots">
+                    <span class="modal_dot dot_red"></span>
+                    <span class="modal_dot dot_yellow"></span>
+                    <span class="modal_dot dot_green"></span>
+                </div>
+                <div class="modal_title_group">
+                    <span class="modal_title" id="modal_title">Project Preview</span>
+                    <span class="modal_live_indicator">● LIVE SANDBOX</span>
+                </div>
+                <div class="modal_toolbar">
+                    <div class="device_switcher" role="group" aria-label="Device view switcher">
+                        <button type="button" class="device_btn active" data-device="desktop" title="Desktop View">💻 Desktop</button>
+                        <button type="button" class="device_btn" data-device="mobile" title="Mobile View (375px)">📱 Mobile</button>
+                    </div>
+                    <a id="modal_external_link" href="#" target="_blank" class="modal_tool_btn" title="Open full project in new tab" aria-label="Open project in new tab">↗</a>
+                    <button type="button" id="modal_close_btn" class="modal_tool_btn modal_close" title="Close Preview (Esc)" aria-label="Close Preview">✕</button>
+                </div>
+            </div>
+            <div class="modal_viewport">
+                <div class="modal_loader" id="modal_loader">
+                    <div class="modal_spinner"></div>
+                    <span>Loading interactive preview...</span>
+                </div>
+                <div class="modal_iframe_wrapper" id="modal_iframe_wrapper">
+                    <iframe id="modal_iframe" src="" title="Interactive Project Preview"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
